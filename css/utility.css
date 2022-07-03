@@ -1,0 +1,64 @@
+*{
+	margin: 0;
+	padding: 0; 
+	box-sizing: border-box; 
+	text-decoration: none;
+	list-style-type: none;
+}
+:root{
+	--light-gray:  #F4F6F7;	
+	--white: #FFFFFF;
+	--black: #000000;
+	--nabi-blue:  #1B2A6C;
+}
+body{
+	overflow-x: hidden;
+}
+/*some customer basic classess start */
+.container-full{
+	max-width: 100%;
+	padding: 0rem 5rem;
+}
+.container{
+	max-width: 90%;
+	margin: 0 auto;
+}
+/*===============TypoGraphic classes start==================*/
+
+.font-normal{
+	font-weight: normal;
+}
+
+h1,h2,h3{ font-size: 3rem; }
+
+.text-center{ text-align: center; }
+.text-left{ text-align: left; }
+.text-right{ text-align: right; }
+
+.text-white{color: #fff;}
+.text-black{color: #000;}
+/*===============TypoGraphic classes Ends===================*/
+/*flex properties start*/
+	.d-flex{
+		display: flex;
+	}
+	.justify-content-center{
+		justify-content: center;
+	}
+	.justify-conten-between{
+		justify-content: space-between;	
+	}
+	.justify-conten-around{
+		justify-content: space-around;	
+	}
+	.justify-conten-evenly{
+		justify-content: space-evenly;	
+	}
+/*flex properties end*/
+ /* media queries */
+@media (max-width: 572px){
+	.container-full{
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+}

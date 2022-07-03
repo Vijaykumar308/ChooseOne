@@ -1,0 +1,341 @@
+let leftSide = document.querySelector("#left");
+let rightSide = document.querySelector("#right");
+let gameStartBtn = document.querySelector("#startBtn");
+let cantChooseBtn = document.getElementById('cantChooseBtn');
+let players = [
+	{
+		"id": "0",
+		"img_source":"images/Game-players/MSDhoni.jpg",
+		"name":"MS Dhoni",
+		"description":"MS Dhoni is the only one who has won all 3 formate trophics."
+	},
+	{
+		"id": "1",
+		"img_source":"images/Game-players/RohitSharma.jpg",
+		"name":"Rohit Sharma",
+		"description":"Rohit Sharma is the only player who hits the double century for the three times."
+	},
+	{
+		"id": "2",
+		"img_source":"images/Game-players/ViratKholi.jpg",
+		"name":"Virat Kholi",
+		"description":"43 -> 100s in  the ODI and 25 in Test."
+
+	},
+	{
+		"id": "3",
+		"img_source":"images/Game-players/SachinTendulkar.jpg",
+		"name":"Sachin Tendulkar",
+		"description":"God of Cricket"
+	},
+
+	{
+		"id": "4",
+		"img_source":"images/Game-players/YuvrajSingh.jpg",
+		"name":"Yuvraj Singh",
+		"description":"Played world cup and be the man of the tournament."
+	},
+	{
+		"id": "5",
+		"img_source":"images/Game-players/Rahane.png",
+		"name":"Ajinkya Rahane",
+		"description":"Right handed Bastman he has a Brilent State Drive."
+	},
+	{
+		"id": "6",
+		"img_source":"images/Game-players/ZaheerKhan.jpg",
+		"name":"Zaheer Khan",
+		"description":"Zaheer held the world record for the highest Test score by a number 11 when he scored 75"
+	},
+	{
+		"id": "7",
+		"img_source":"images/Game-players/GautamGambhir.jpg",
+		"name":"Gautam Gambhir",
+		"description":"He made 97 in the final match of 2011 world cup which is a great contribution."
+	},
+
+	{
+		"id": "8",
+		"img_source":"images/Game-players/Sehwag.jpg",
+		"name":"Virender Sehwag",
+		"description":"Virander Sehwag."
+	},
+	{
+		"id": "9",
+		"img_source":"images/Game-players/RavindraJadeja.png",
+		"name":"Ravindra Jadeja",
+		"description":"A spin blower."
+	},
+	{
+		"id": "10",
+		"img_source":"images/Game-players/SureshRaina.jpg",
+		"name":"Suresh Raina",
+		"description":"A left handed player with a spin blower and fantastic filder."
+	},
+	{
+		"id": "11",
+		"img_source":"images/Game-players/JaspritBumrah.jpg",
+		"name":"Jasprit Bumrah",
+		"description":"A Brilent Fast Blower for India."
+	},
+	{
+		"id": "12",
+		"img_source":"images/Game-players/KapilDev.jpg",
+		"name":"Kapil Dev",
+		"description":"Kapil Dev is the captain who won the world cup for India in 1983 for the first Time"
+	},
+	{
+		"id": "13",
+		"img_source":"images/Game-players/JaspritBumrah.jpg",
+		"name":"Jasprit Bumrah",
+		"description":"A Brilent Fast Blower for India."
+	},
+	{
+		"id": "14",
+		"img_source":"images/Game-players/KLRahul.jpg",
+		"name":"KL Rahul",
+		"description":"A Brilent Opener Bastman and wicket keeper."
+	},
+	{
+		"id": "15",
+		"img_source":"images/Game-players/ShaneWarne.jpg",
+		"name":"Shane Warne",
+		"description":"A Brilent Spin bowler for Australia, he took 708 wickets in test and 293 in ODI."
+	},
+	{
+		"id": "16",
+		"img_source":"images/Game-players/MuttiahMuralitharan.jpg",
+		"name":"Muttiah Muralitaran",
+		"description":"He has the record of taking highest wickets, he took 800 wickets in test and 534 in ODI."
+	},
+	{
+		"id": "17",
+		"img_source":"images/Game-players/BrianLara.jpg",
+		"name":"Brian Lara",
+		"description":"Brian Lara has the record of making 400 runs in test Cricket."
+	},
+	{
+		"id": "18",
+		"img_source":"images/Game-players/RahulDravid.jpg",
+		"name":"Rahul Dravid",
+		"description":"The Wall"
+	},
+	{
+		"id": "19",
+		"img_source":"images/Game-players/ABD.jpg",
+		"name":"AB Develires",
+		"description":"Mr. 360 player"
+	},
+	{
+		"id": "20",
+		"img_source":"images/Game-players/LasithMalinga.jpg",
+		"name":"Lasith Malinga",
+		"description":"Malinga is famouse for his bowling action and he took 4 consecutive wicket twice."
+	},
+	{
+		"id": "21",
+		"img_source":"images/Game-players/MithaliRaj.jpg",
+		"name":"Mithali Raj",
+		"description":"Mithali is the highest run-scorer in women’s international cricket"
+	},
+	{
+		"id": "22",
+		"img_source":"images/Game-players/JulanGoswami.jpg",
+		"name":"Julan Goswami",
+		"description":"Most wickets for women’s international cricket"
+	},
+	{
+		"id": "23",
+		"img_source":"images/Game-players/HarmanPreetKaur.jpg",
+		"name":"Harmanpreet Kaur",
+		"description":"Harmanpreet Kaur is the current indian women’s captain."
+	},
+	{
+		"id": "24",
+		"img_source":"images/Game-players/ChrisGayle.jpg",
+		"name":"Chris Gayle",
+		"description":"Chris Gayle the Universe Boss."
+	},
+	{
+		"id": "25",
+		"img_source":"images/Game-players/ShoaibAkhtar.jpg",
+		"name":"Shoaib Akhtar",
+		"description":"Shoaib Akhtar is also know as Rawalpindi Express."
+	},
+	{
+		"id": "26",
+		"img_source":"images/Game-players/AnjumChopra.jpg",
+		"name":"Anjum Chopra",
+		"description":"Making her ODI debut at just 17, player of the series in the just her second series."
+	},
+	{
+		"id": "27",
+		"img_source":"images/Game-players/Anjum Chopra.jpg",
+		"name":"",
+		"description":""
+	}
+];
+
+const randInt = () => { return Math.floor(Math.random() * players.length); }
+	
+let leftCount = 0;
+let rightCount = 0;
+
+//common funcation
+const click = (element,leftSideNumber) => {
+	//let leftSideNumber = Math.floor(Math.random() * 10);
+
+	if(element.id === "left"){
+
+		rightCount = 0;
+		if (leftCount >= 4){
+			let val = localStorage.getItem("leftSideNumber");
+			alert(`${players[val].name} is Your Faviourat Player `);
+			return;
+		}else{
+			let imgTag = rightSide.children[0];
+			let description = rightSide.children[1];
+
+			rightSide.classList.remove("clicked");		
+			imgTag.setAttribute("src",players[leftSideNumber].img_source);
+			imgTag.setAttribute("title",players[leftSideNumber].description);
+			description.innerHTML = players[leftSideNumber].name;		
+		}
+
+		leftCount++;
+	}
+
+	if (element.id === "right") {
+		leftCount = 0;
+		//if (imgName == "DefaultImg"){ alert('click on other side'); }	
+
+		if(rightCount >=4 ){
+			let val = localStorage.getItem("n");
+			alert(`${players[val].name} is your Faviourat Player `);
+			return;
+
+		}else{
+			let imgTag = leftSide.children[0];
+			let description = leftSide.children[1];
+
+			leftSide.classList.remove("clicked");	
+
+			imgTag.setAttribute("src",players[leftSideNumber].img_source);
+			imgTag.setAttribute("title",players[leftSideNumber].description);
+			description.innerHTML = players[leftSideNumber].name;
+		}
+
+		rightCount++;
+	}
+	element.classList.add("clicked");	
+	// console.log(element.id);
+	// console.log(leftSideNumber);
+}
+
+var leftSideNumber,n;
+//left side clicked
+let firstTime = true;
+let num;
+
+let arr = [];
+var numCheck = (leftSideNumber,n) => {
+	console.log(`Random number is: ${leftSideNumber} and n is:  ${n}`);
+
+	if(leftSideNumber == n) {
+
+		console.log("===fun call===");
+		leftSideNumber = randInt();
+		let ab = randInt();
+		console.log("leftSideNumber is: "+ leftSideNumber);
+		console.log("ab is: "+ab);
+		arr.push(leftSideNumber);
+		arr.push(n);
+		console.log("this is arr"+arr);
+		// return ab;
+	}
+	else{
+		return arr;
+	}
+
+	numCheck(leftSideNumber,n);
+}
+window.onload = window.localStorage.clear();
+//left side click
+leftSide.addEventListener("click",()=> {
+	leftSideNumber = randInt();
+	n = randInt();
+		// leftSideNumber = n = 0;
+	//let [leftSideNumber,n] = numCheck(0,0);
+	if(leftSideNumber == n){
+		leftSideNumber = leftSideNumber+1;
+		console.log(leftSideNumber);
+	}
+	// console.log("new no"+a);
+	// console.log(`${leftSideNumber} and ${n}`);
+	localStorage.setItem("n", n);
+
+
+	if(firstTime) {
+		click(rightSide,leftSideNumber);
+		localStorage.setItem("leftSideNumber",leftSideNumber);
+		firstTime = false;
+	}
+
+	//console.log("num is: "+num);
+	let preVal = localStorage.getItem("leftSideNumber");
+
+	if(preVal == n){
+		 n = n+1;
+		 localStorage.setItem("n",n);
+		 // console.log("leftSide Effect");
+	}
+
+	click(leftSide,n);
+
+});
+
+rightSide.addEventListener("click",()=>{
+	leftSideNumber = randInt();
+	n = randInt();
+	// leftSideNumber = n = 1;
+	//numCheck(leftSideNumber,n);
+	if(leftSideNumber == n){
+		leftSideNumber = leftSideNumber+1;
+		// console.log(leftSideNumber);
+	}
+	localStorage.setItem("leftSideNumber", leftSideNumber);
+
+	// console.log("fist time Right side: "+firstTime);
+	if(firstTime){
+		click(leftSide,n);
+		localStorage.setItem("n",n);
+		firstTime = false;
+	}
+
+	let preVal = localStorage.getItem("n");
+
+	if(preVal == leftSideNumber){ 
+
+		leftSideNumber = leftSideNumber + 1; 
+		localStorage.setItem("leftSideNumber",leftSideNumber);
+		// console.log("Right Side Effect");
+	}
+
+	click(rightSide,leftSideNumber);
+
+});
+
+cantChooseBtn.addEventListener("click",()=>{
+	try{
+		let leftSideCandidate = localStorage.getItem("leftSideNumber");
+		let rightSideCandidate = localStorage.getItem("n");
+		alert(`${players[leftSideCandidate].name} and ${players[rightSideCandidate].name} both are the best candidate You really can't choose between them.`);
+	}
+	catch(err){
+		alert("let fist clicked on any img you can't too smart ");
+	}
+});
+/*
+	if click(leftside,0)  =>  0th number img will applies on right side.
+	if click(rightside,1)  =>  1th number img will applies on left side.
+*/

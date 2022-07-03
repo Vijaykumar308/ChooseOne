@@ -1,0 +1,196 @@
+//working fine - OKay status 200
+//Problem 1 - when click on only one side for 5 times countinously either on left or right. 
+//Problem 1 - status 200. 
+//Problem 2 - Images are appiers on both side same.
+
+//status 200 -  when clicked on mixup then its fine. 
+
+let leftSide = document.querySelector("#left");
+let rightSide = document.querySelector("#right");
+let gameStartBtn = document.querySelector("#startBtn");
+let cantChooseBtn = document.getElementById('cantChooseBtn');
+let players = [
+	{
+		"id": "0",
+		"img_source":"images/Game-players/MSDhoni.jpg",
+		"name":"MS Dhoni",
+		"description":"MS Dhoni is the only one who has won all 3 formate trophics."
+	},
+	{
+		"id": "1",
+		"img_source":"images/Game-players/RohitSharma.jpg",
+		"name":"Rohit Sharma",
+		"description":"Rohit Sharma is the only player who hits the double century for the three times."
+	},
+	{
+		"id": "2",
+		"img_source":"images/Game-players/ViratKholi.jpg",
+		"name":"Virat Kholi",
+		"description":"43 100s in  the ODI and 25 in Test."
+
+	},
+	{
+		"id": "3",
+		"img_source":"images/Game-players/SachinTendulkar.jpg",
+		"name":"Sachin Tendulkar",
+		"description":"God of Cricket"
+	},
+
+	{
+		"id": "4",
+		"img_source":"images/Game-players/YuvrajSingh.jpg",
+		"name":"Yuvraj Singh",
+		"description":"Played world cup and be the man of the tournament."
+	},
+	{
+		"id": "5",
+		"img_source":"images/Game-players/Rahane.png",
+		"name":"Ajinkya Rahane",
+		"description":"Ajinkya Rahane"
+	},
+	{
+		"id": "6",
+		"img_source":"images/Game-players/ZaheerKhan.jpg",
+		"name":"Zaheer Khan",
+		"description":"None"
+
+	},
+	{
+		"id": "7",
+		"img_source":"images/Game-players/GautamGambhir.jpg",
+		"name":"Gautam Gambhir",
+		"description":""
+	},
+
+	{
+		"id": "8",
+		"img_source":"images/Game-players/Sehwag.jpg",
+		"name":"Virender Sehwag",
+		"description":"Virander Sehwag."
+	},
+	{
+		"id": "9",
+		"img_source":"images/Game-players/RavindraJadeja.png",
+		"name":"Ravindra Jadeja",
+		"description":"A spin blower."
+	}
+];
+
+const randInt = () => { return Math.floor(Math.random() * 10); }
+	
+let leftCount = rightCount = 0;
+
+//common funcation
+const click = (element,leftSideNumber) => {
+	//let leftSideNumber = Math.floor(Math.random() * 10);
+
+	if(element.id === "left"){
+
+		rightCount = 0;
+		if (leftCount >= 4){
+			let val = localStorage.getItem("leftSideNumber");
+			alert(`${players[val].name} is `);
+			return 0;
+		}else{
+			let imgTag = rightSide.children[0];
+			let description = rightSide.children[1];
+
+			rightSide.classList.remove("clicked");		
+			imgTag.setAttribute("src",players[leftSideNumber].img_source);
+			description.innerHTML = players[leftSideNumber].name;		
+		}
+
+		leftCount++;
+	}
+
+	if (element.id === "right") {
+		leftCount = 0;
+		//if (imgName == "DefaultImg"){ alert('click on other side'); }	
+
+		if(rightCount >=4 ){
+			let val = localStorage.getItem("n");
+			alert(`${players[val].name} is `);
+			return 0;
+
+		}else{
+			let imgTag = leftSide.children[0];
+			let description = leftSide.children[1];
+
+			leftSide.classList.remove("clicked");	
+
+			imgTag.setAttribute("src",players[leftSideNumber].img_source);
+			description.innerHTML = players[leftSideNumber].name;
+		}
+
+		rightCount++;
+	}
+	element.classList.add("clicked");	
+	// console.log(element.id);
+	// console.log(leftSideNumber);
+}
+
+var leftSideNumber,n;
+//left side clicked
+let firstTime = true;
+let num;
+
+let numCheck = (leftSideNumber,n) => {
+	console.log(`Random number is: ${leftSideNumber} and n is:  ${n}`);
+
+	if(leftSideNumber == n) {
+
+		console.log("===fun call===");
+		leftSideNumber = randInt();
+		n = randInt();
+		console.log("leftSideNumber is: "+ leftSideNumber);
+		console.log("n is: "+n);
+
+	}
+	else{
+		return 0;
+	}
+
+	numCheck(leftSideNumber,n);
+}
+
+//left side click
+leftSide.addEventListener("click",()=> {
+	leftSideNumber = randInt();
+	n = Math.floor(Math.random() * players.length);
+
+	numCheck(leftSideNumber,n);
+	localStorage.setItem("n", n);
+	
+	if(firstTime) {
+		click(rightSide,leftSideNumber);
+		localStorage.setItem("leftSideNumber",leftSideNumber);
+		firstTime = false;
+	}
+
+	console.log("num is: "+num);
+	click(leftSide,n);
+
+});
+
+rightSide.addEventListener("click",()=>{
+	leftSideNumber = randInt();
+	n = randInt();
+	
+	numCheck(leftSideNumber,n);
+	localStorage.setItem("leftSideNumber", leftSideNumber);
+	
+	// console.log("fist time Right side: "+firstTime);
+	if(firstTime){
+		click(leftSide,n);
+		localStorage.setItem("n",n);
+		firstTime = false;
+	}
+
+	console.log("RightSide num is: "+num);
+	click(rightSide,leftSideNumber);
+});
+
+/*
+	if click(leftside,0)  =>  0th number img will applies on right side.
+	if click(rightside,1)  =>  1th number img will applies on left side.
+*/

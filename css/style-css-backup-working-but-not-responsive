@@ -1,0 +1,139 @@
+/*this file's code is not responsive the whole page but its code is good with image responsive.*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+*{
+	font-family: 'Roboto', sans-serif;
+}
+html{
+	font-size: 62.5%;
+}
+:root{
+	--theame-color: #1B2A6C; /*nabi-blue*/	
+	--light-gray:  #F4F6F7;	
+	--orange:   #FF7951;
+}
+body{
+	background-color: var(--theame-color);
+}
+.header{
+	background-color: var(--orange);
+}
+.header h3{
+	color: #fff;
+}
+.logo{
+	padding: 1rem 0;
+	font-size:2rem;
+	letter-spacing: .2rem;
+	color: var(--theame-color);
+}
+/*Main Section Design*/
+.main-section{
+   /*background-color: var(--theame-color);	*/
+}
+.main-section h2{
+	padding-top: 2rem;
+	color: #fff;
+	/*text-shadow: 1px 1px 2px black;*/
+}
+.main-section p{
+	margin: .1rem 0;
+	padding-left: 4rem;
+	font-size: 1.4rem;
+	color: var(--orange);
+}
+.Game-section{
+	width: 90%;
+	display: flex;
+	justify-content: space-around;
+	color: #fff;
+	/*background-color: var(--theame-color);*/
+	position: absolute;
+	top: 50%;left: 50%;
+	transform: translate(-50%,-50%);
+}
+.Game-section .both-div{
+	width: 25vw;
+	max-height: 40vh;
+	text-align: center;
+	background-color: var(--orange);
+	box-shadow: 0px 0px 1.5rem .3rem rgba(0, 0, 0, .05);
+	border-radius: .5rem;
+	cursor: pointer;
+}
+.Game-section .both-div img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+.description{
+    font-size: 1.2rem;
+    text-align: center;
+    opacity: 0.8;
+    color: #fff;
+    word-spacing: .2rem;
+    letter-spacing: .1rem;
+    line-height: 1rem;
+    /*font-weight: bold;*/
+    /*background-color: red;*/
+}
+.vs{
+	font-size: 4rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--orange);
+	text-shadow: 1px 1px 3px black;
+	/*background-color: var(--theame-color) !important;*/
+}
+
+.choose-btn{
+	position: absolute;
+	bottom: 12rem;
+	width: 90%;
+	display: flex;
+	justify-content: center;
+}
+.choose-btn button{
+	width: 20rem;
+	padding: 1rem 0;	
+	background-color: var(--orange);
+	color: var(--light-gray);
+	font-size: 1.7rem;
+	border: none;
+	letter-spacing: 1px;
+	border-radius: .5rem;
+	cursor: pointer;
+}
+.clicked{
+	border: .3rem solid yellow;
+}
+@media (max-width: 600px){
+	html{
+		font-size: 55%;
+	}
+	.Game-section{
+		height: 30vh;
+		flex-direction: column;
+		justify-content: unset;
+		align-items: center;
+	}
+	.Game-section .both-div{
+		width: 40vw;
+	}
+	.Game-section .both-div img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+
+	}
+	.choose-btn{
+		bottom: -16rem;
+	}
+}
+ 
+@media (max-width: 400px){
+	html{
+		font-size: 40%;
+	}
+}
