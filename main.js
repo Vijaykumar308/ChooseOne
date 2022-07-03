@@ -90,7 +90,7 @@ let players = [
 	},
 	{
 		"id": "12",
-		"img_source":"images/Game-players/ShaneWarne.jpg",
+		"img_source":"images/Game-players/shaneWarne.jpg",
 		"name":"Shane Warne",
 		"description":"A Brilent Spin bowler for Australia, he took 708 wickets in test and 293 in ODI.",
 		"category":"cricket"
@@ -181,7 +181,7 @@ let players = [
 	// },
 	{
 		"id": "23",
-		"img_source":"images/Game-players/SirVVR.jpg",
+		"img_source":"images/Game-players/SirVVR.JPG",
 		"name":"Sir Viv Richards",
 		"description":"Sir Viv Richards was a fantastic batsman who was respected the world over.",
 		"category":"cricket"
