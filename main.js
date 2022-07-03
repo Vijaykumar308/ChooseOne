@@ -76,7 +76,7 @@ let players = [
 	},
 	{
 		"id": "10",
-		"img_source":"images/Game-players/KapilDev.jpg",
+		"img_source":"images/Game-players/kapilDev.jpg",
 		"name":"Kapil Dev",
 		"description":"Kapil Dev is the captain who won the world cup for India in 1983 for the first Time",
 		"category":"cricket"
@@ -125,7 +125,7 @@ let players = [
 	},
 	{
 		"id": "17",
-		"img_source":"images/Game-players/LasithMalinga.jpg",
+		"img_source":"images/Game-players/LasithMalinga.JPG",
 		"name":"Lasith Malinga",
 		"description":"Malinga is famouse for his bowling action and he took 4 consecutive wicket twice.",
 		"category":"cricket"
@@ -195,7 +195,7 @@ let players = [
 	// },
 	{
 		"id": "24",
-		"img_source":"images/Game-players/EllysePerry.jpg",
+		"img_source":"images/Game-players/EllysePerry.JPG",
 		"name":"Ellyse Perry",
 		"description":"First player to amass a combined 1,000 runs and 100 wickets in T20Is,",
 		"category":"cricket"
@@ -349,7 +349,7 @@ let players = [
 	},
 	{
 		"id": "46",
-		"img_source":"images/Game-players/AkshayKumar.jpg",
+		"img_source":"images/Game-players/AkshayKumar.JPG",
 		"name":"Akshay Kumar",
 		"description":"",
 		"category":"Bollywood"
