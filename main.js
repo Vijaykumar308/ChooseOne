@@ -391,9 +391,9 @@ const click = (element,leftSideNumber) => {
 		rightCount = 0;
 		if (leftCount >= 4){
 			let val = localStorage.getItem("leftSideNumber");
-			// alert(`${players[val].name} is your Faviourat One`);
+			// alert(`${players[val].name} is your favourite One`);
 			swal({
-				text:`${players[val].name} is your Faviourat One`,
+				text:`${players[val].name} is your Favourite One`,
 				buttons:{
 					playBtn:{
 						text:"Play Again",
@@ -423,9 +423,9 @@ const click = (element,leftSideNumber) => {
 
 		if(rightCount >=4 ){
 			let val = localStorage.getItem("n");
-			// alert(`${players[val].name} is your Faviourat One`);
+			// alert(`${players[val].name} is your favourite One`);
 			swal({
-				text:`${players[val].name} is your Faviourat One`,
+				text:`${players[val].name} is your Favourite One`,
 				buttons:{
 					playBtn:{
 						text:"Play Again",
